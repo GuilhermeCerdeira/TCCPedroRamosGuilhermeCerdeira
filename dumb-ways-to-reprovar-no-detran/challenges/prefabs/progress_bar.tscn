@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cpjawbdnu5ytw"]
+
+[ext_resource type="Script" uid="uid://cl23m4bi63ewv" path="res://challenges/prefabs/ProgressBar.gd" id="1_6g0mv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_01ruk"]
+bg_color = Color(0.0768358, 0.0768358, 0.0768358, 0.647059)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6hdrq"]
+bg_color = Color(0.40019, 1, 0.369742, 1)
+
+[node name="ProgressBar" type="ProgressBar" unique_id=2001181491]
+offset_left = -780.0
+offset_top = 498.0
+offset_right = 774.0
+offset_bottom = 525.0
+theme_override_styles/background = SubResource("StyleBoxFlat_01ruk")
+theme_override_styles/fill = SubResource("StyleBoxFlat_6hdrq")
+show_percentage = false
+script = ExtResource("1_6g0mv")

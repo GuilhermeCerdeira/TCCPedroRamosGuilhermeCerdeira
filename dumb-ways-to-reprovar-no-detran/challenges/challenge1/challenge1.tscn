@@ -1,0 +1,338 @@
+[gd_scene format=3 uid="uid://bqmtuyn58grfb"]
+
+[ext_resource type="Script" uid="uid://b3u22pyxkidxn" path="res://challenges/challenge1/scripts/challenge1.gd" id="1_0s4sl"]
+[ext_resource type="Texture2D" uid="uid://clu8snf73mm1f" path="res://challenges/challenge1/images/bg.png" id="2_y51wv"]
+[ext_resource type="Texture2D" uid="uid://qiym0cxd0ls4" path="res://challenges/challenge1/images/clutch_1.png" id="3_avxgo"]
+[ext_resource type="Texture2D" uid="uid://bvp2seiy5hmyv" path="res://challenges/challenge1/images/pointer.png" id="4_j7pff"]
+[ext_resource type="Texture2D" uid="uid://dkbesb7cewq2" path="res://challenges/challenge1/images/highlight_gauge.png" id="5_107nt"]
+[ext_resource type="Texture2D" uid="uid://bx8gfme6m34vo" path="res://challenges/challenge1/images/shift.png" id="6_ectwq"]
+[ext_resource type="PackedScene" uid="uid://cpjawbdnu5ytw" path="res://challenges/prefabs/progress_bar.tscn" id="7_8a7ir"]
+[ext_resource type="Script" uid="uid://baa0ninsjgfue" path="res://challenges/prefabs/end_screen.gd" id="8_2ctgg"]
+[ext_resource type="PackedScene" uid="uid://dy0rx014ujcn0" path="res://challenges/prefabs/timer.tscn" id="8_es1ep"]
+[ext_resource type="Texture2D" uid="uid://c2k5au3864lqp" path="res://challenges/challenge1/images/Screenshot_1.png" id="9_8a7vi"]
+[ext_resource type="AudioStream" uid="uid://bpq0t8x1iblqv" path="res://sounds/reving-low.wav" id="10_vyf5k"]
+[ext_resource type="AudioStream" uid="uid://dlrvorkh7wdak" path="res://sounds/up.wav" id="11_d0v2k"]
+[ext_resource type="AudioStream" uid="uid://fd5pmtbgmklo" path="res://sounds/red-lining.wav" id="12_jrgwv"]
+[ext_resource type="AudioStream" uid="uid://cglgbofhpbs32" path="res://sounds/down.wav" id="13_yk8nb"]
+
+[sub_resource type="Animation" id="Animation_rgj06"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.49066]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../warning:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_kqp3s"]
+resource_name = "banging"
+length = 0.25
+loop_mode = 1
+step = 0.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.01, 0.110233, 0.244151),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [3.49066, 3.7734, 3.49066]
+}
+
+[sub_resource type="Animation" id="Animation_xtfwt"]
+resource_name = "clutchin"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(0.267944, 1.56917),
+"update": 0,
+"values": [3.49066, 0.174533]
+}
+
+[sub_resource type="Animation" id="Animation_p4y5i"]
+resource_name = "start_banging"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(3.13834, 1),
+"update": 0,
+"values": [0.174533, 3.49066]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_exagb"]
+_data = {
+&"RESET": SubResource("Animation_rgj06"),
+&"banging": SubResource("Animation_kqp3s"),
+&"clutchin": SubResource("Animation_xtfwt"),
+&"start_banging": SubResource("Animation_p4y5i")
+}
+
+[sub_resource type="Animation" id="Animation_qjmwd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("warning:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_5dlqh"]
+resource_name = "warning"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("warning:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dfdox"]
+_data = {
+&"RESET": SubResource("Animation_qjmwd"),
+&"warning": SubResource("Animation_5dlqh")
+}
+
+[sub_resource type="Animation" id="Animation_fpym4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("stick:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_n3khr"]
+resource_name = "wrong"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("stick:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dpd7b"]
+_data = {
+&"RESET": SubResource("Animation_fpym4"),
+&"wrong": SubResource("Animation_n3khr")
+}
+
+[node name="Node2D" type="Node2D" unique_id=944308052 node_paths=PackedStringArray("end_screen", "end_screen_label", "pedal", "stick", "pointer_animation_player", "gauge_animation_player", "stick_animation_player", "up_sound", "down_sound", "rev_low_sound", "rev_high_sound")]
+script = ExtResource("1_0s4sl")
+end_screen = NodePath("ColorRect")
+end_screen_label = NodePath("ColorRect/LabelEnd")
+pedal = NodePath("pedal")
+stick = NodePath("stick")
+pointer_animation_player = NodePath("PointerAnimationPlayer")
+gauge_animation_player = NodePath("GaugeAnimationPlayer")
+stick_animation_player = NodePath("StickAnimationPlayer")
+up_sound = NodePath("up")
+down_sound = NodePath("down")
+rev_low_sound = NodePath("rev-low")
+rev_high_sound = NodePath("rev-high")
+
+[node name="bg" type="Sprite2D" parent="." unique_id=653213139]
+position = Vector2(-1, 0)
+texture = ExtResource("2_y51wv")
+
+[node name="pedal" type="Sprite2D" parent="." unique_id=836801896]
+texture = ExtResource("3_avxgo")
+
+[node name="Button" type="Button" parent="pedal" unique_id=636251691]
+offset_left = -109.0
+offset_top = 265.0
+offset_right = -20.0
+offset_bottom = 352.0
+focus_mode = 0
+toggle_mode = true
+flat = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=87925300]
+zoom = Vector2(0.595, 0.595)
+
+[node name="limiter" type="Sprite2D" parent="." unique_id=697939210]
+position = Vector2(-119, -79)
+rotation = 3.49066
+texture = ExtResource("4_j7pff")
+offset = Vector2(119.835, 78.6)
+
+[node name="warning" type="Sprite2D" parent="." unique_id=1116292285]
+position = Vector2(-14, -7)
+scale = Vector2(0.91, 0.902256)
+texture = ExtResource("5_107nt")
+
+[node name="stick" type="Sprite2D" parent="." unique_id=270703093]
+position = Vector2(400, 400)
+texture = ExtResource("6_ectwq")
+hframes = 2
+
+[node name="stick_button" type="Button" parent="stick" unique_id=1963634746]
+offset_left = -92.0
+offset_top = -145.0
+offset_right = 102.0
+offset_bottom = 119.0
+focus_mode = 0
+flat = true
+
+[node name="PointerAnimationPlayer" type="AnimationPlayer" parent="." unique_id=47684799]
+root_node = NodePath("../limiter")
+libraries/ = SubResource("AnimationLibrary_exagb")
+autoplay = &"banging"
+
+[node name="GaugeAnimationPlayer" type="AnimationPlayer" parent="." unique_id=1324843156]
+libraries/ = SubResource("AnimationLibrary_dfdox")
+autoplay = &"warning"
+
+[node name="StickAnimationPlayer" type="AnimationPlayer" parent="." unique_id=101661812]
+libraries/ = SubResource("AnimationLibrary_dpd7b")
+
+[node name="ProgressBar" parent="." unique_id=2001181491 instance=ExtResource("7_8a7ir")]
+
+[node name="Timer" parent="." unique_id=186816170 instance=ExtResource("8_es1ep")]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2069638948 node_paths=PackedStringArray("question")]
+process_mode = 3
+visible = false
+offset_left = -1066.0
+offset_top = -626.0
+offset_right = 1122.0
+offset_bottom = 592.0
+color = Color(0.156863, 0.156863, 0.156863, 0.745098)
+script = ExtResource("8_2ctgg")
+question = NodePath("Question")
+
+[node name="LabelEnd" type="Label" parent="ColorRect" unique_id=763137362]
+layout_mode = 0
+offset_left = 428.0
+offset_top = 340.0
+offset_right = 1770.0
+offset_bottom = 669.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 70
+theme_override_font_sizes/font_size = 215
+text = "VENCEU"
+horizontal_alignment = 1
+
+[node name="ShowQuestionButton" type="Button" parent="ColorRect" unique_id=454398154]
+layout_mode = 0
+offset_left = 805.0
+offset_top = 679.0
+offset_right = 1330.0
+offset_bottom = 837.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/font_size = 61
+text = "Ver questão"
+
+[node name="Replay" type="Button" parent="ColorRect" unique_id=833567947]
+layout_mode = 0
+offset_left = 313.0
+offset_top = 136.0
+offset_right = 411.0
+offset_bottom = 240.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/font_size = 61
+text = "<"
+
+[node name="Question" type="TextureRect" parent="ColorRect" unique_id=683289688]
+visible = false
+layout_mode = 0
+offset_left = 597.0
+offset_top = 204.0
+offset_right = 1551.0
+offset_bottom = 1005.0
+texture = ExtResource("9_8a7vi")
+
+[node name="CloseQuestionButton" type="Button" parent="ColorRect/Question" unique_id=1795381679]
+layout_mode = 0
+offset_left = 930.0
+offset_top = -64.0
+offset_right = 1018.0
+offset_bottom = 21.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 56
+text = "X"
+
+[node name="rev-low" type="AudioStreamPlayer2D" parent="." unique_id=1504614104]
+stream = ExtResource("10_vyf5k")
+
+[node name="up" type="AudioStreamPlayer2D" parent="." unique_id=578019345]
+stream = ExtResource("11_d0v2k")
+
+[node name="rev-high" type="AudioStreamPlayer2D" parent="." unique_id=160807073]
+stream = ExtResource("12_jrgwv")
+volume_db = -10.346
+autoplay = true
+
+[node name="down" type="AudioStreamPlayer2D" parent="." unique_id=1276402412]
+stream = ExtResource("13_yk8nb")
+volume_db = -10.346
+
+[connection signal="toggled" from="pedal/Button" to="." method="_on_button_toggled"]
+[connection signal="button_down" from="stick/stick_button" to="." method="_on_stick_button_button_down"]
+[connection signal="animation_finished" from="PointerAnimationPlayer" to="." method="_on_pointer_animation_player_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="ColorRect/ShowQuestionButton" to="ColorRect" method="_on_show_question_button_pressed"]
+[connection signal="pressed" from="ColorRect/Replay" to="ColorRect" method="_on_replay_pressed"]
+[connection signal="pressed" from="ColorRect/Question/CloseQuestionButton" to="ColorRect" method="_on_close_question_button_pressed"]
+[connection signal="finished" from="up" to="." method="_on_up_finished"]
+[connection signal="finished" from="down" to="." method="_on_down_finished"]

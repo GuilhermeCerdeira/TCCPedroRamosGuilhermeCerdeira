@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://def1o8r03djfm"]
+
+[ext_resource type="Script" uid="uid://dqcyc24krc61a" path="res://scripts/mainmenu.gd" id="1_5mbse"]
+
+[node name="Mainmenu" type="Node2D" unique_id=309831311]
+script = ExtResource("1_5mbse")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=21001234]
+zoom = Vector2(0.595, 0.595)
+
+[node name="ModoDesafioButton" type="Button" parent="." unique_id=1288187031]
+offset_left = -455.0
+offset_top = 96.0
+offset_right = -13.0
+offset_bottom = 248.0
+theme_override_font_sizes/font_size = 50
+text = "Modo desafio"
+metadata/_edit_use_anchors_ = true
+
+[node name="LeaderboardButton" type="Button" parent="." unique_id=1218456848]
+offset_left = -455.0
+offset_top = 256.0
+offset_right = -13.0
+offset_bottom = 336.0
+theme_override_font_sizes/font_size = 50
+text = "Placar"
+metadata/_edit_use_anchors_ = true
+
+[node name="ModoTreinoButton" type="Button" parent="." unique_id=1956415955]
+offset_left = 10.0
+offset_top = 95.0
+offset_right = 452.0
+offset_bottom = 336.0
+theme_override_font_sizes/font_size = 50
+text = "Modo treino"
+metadata/_edit_use_anchors_ = true
+
+[node name="TituloLabel" type="Label" parent="." unique_id=884068161]
+offset_left = -817.0
+offset_top = -310.0
+offset_right = 824.0
+offset_bottom = -130.0
+theme_override_font_sizes/font_size = 75
+text = "Dumb ways to reprovar no detran"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SairButton" type="Button" parent="." unique_id=250095784]
+offset_left = 851.0
+offset_top = -502.0
+offset_right = 925.0
+offset_bottom = -425.0
+theme_override_font_sizes/font_size = 50
+text = "X"
+
+[connection signal="pressed" from="ModoDesafioButton" to="." method="_on_modo_desafio_button_pressed"]
+[connection signal="pressed" from="LeaderboardButton" to="." method="_on_leaderboard_button_pressed"]
+[connection signal="pressed" from="ModoTreinoButton" to="." method="_on_modo_treino_button_pressed"]
+[connection signal="pressed" from="SairButton" to="." method="_on_sair_button_pressed"]

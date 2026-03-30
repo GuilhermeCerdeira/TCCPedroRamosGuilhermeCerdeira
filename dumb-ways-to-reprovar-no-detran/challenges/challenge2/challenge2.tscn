@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://8etwwo4ou4b"]
+
+[ext_resource type="Script" uid="uid://3giq406fiby" path="res://challenges/challenge2/challenge2.gd" id="1_i82w0"]
+
+[node name="Challenge2" type="Node2D" unique_id=520292677 node_paths=PackedStringArray("label_teste")]
+script = ExtResource("1_i82w0")
+label_teste = NodePath("teste")
+
+[node name="teste" type="Label" parent="." unique_id=583807376]
+offset_left = -295.0
+offset_top = -414.0
+offset_right = 282.0
+offset_bottom = -212.0
+theme_override_font_sizes/font_size = 50
+text = "TESTE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WinButton" type="Button" parent="." unique_id=518834152]
+offset_left = 260.0
+offset_top = 104.0
+offset_right = 582.0
+offset_bottom = 319.0
+theme_override_font_sizes/font_size = 50
+text = "WIN"
+
+[node name="LoseButton" type="Button" parent="." unique_id=990593962]
+offset_left = -506.0
+offset_top = 84.0
+offset_right = -190.0
+offset_bottom = 303.0
+theme_override_font_sizes/font_size = 50
+text = "LOSE"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=129249615]
+zoom = Vector2(0.595, 0.595)
+
+[connection signal="pressed" from="WinButton" to="." method="_on_win_button_pressed"]
+[connection signal="pressed" from="LoseButton" to="." method="_on_lose_button_pressed"]
