@@ -2,56 +2,84 @@
 
 [ext_resource type="Script" uid="uid://dqcyc24krc61a" path="res://scripts/mainmenu.gd" id="1_5mbse"]
 
-[node name="Mainmenu" type="Node2D" unique_id=309831311]
+[node name="Mainmenu" type="Node2D" unique_id=309831311 node_paths=PackedStringArray("name_input", "warning_name")]
 script = ExtResource("1_5mbse")
+name_input = NodePath("NameInputLineEdit")
+warning_name = NodePath("Warning")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=21001234]
 zoom = Vector2(0.595, 0.595)
 
 [node name="ModoDesafioButton" type="Button" parent="." unique_id=1288187031]
 offset_left = -455.0
-offset_top = 96.0
+offset_top = 128.0
 offset_right = -13.0
-offset_bottom = 248.0
+offset_bottom = 280.0
 theme_override_font_sizes/font_size = 50
 text = "Modo desafio"
 metadata/_edit_use_anchors_ = true
 
 [node name="LeaderboardButton" type="Button" parent="." unique_id=1218456848]
 offset_left = -455.0
-offset_top = 256.0
+offset_top = 288.0
 offset_right = -13.0
-offset_bottom = 336.0
+offset_bottom = 368.0
 theme_override_font_sizes/font_size = 50
 text = "Placar"
 metadata/_edit_use_anchors_ = true
 
 [node name="ModoTreinoButton" type="Button" parent="." unique_id=1956415955]
 offset_left = 10.0
-offset_top = 95.0
+offset_top = 127.0
 offset_right = 452.0
-offset_bottom = 336.0
+offset_bottom = 368.0
 theme_override_font_sizes/font_size = 50
 text = "Modo treino"
 metadata/_edit_use_anchors_ = true
 
 [node name="TituloLabel" type="Label" parent="." unique_id=884068161]
 offset_left = -817.0
-offset_top = -310.0
+offset_top = -341.0
 offset_right = 824.0
-offset_bottom = -130.0
-theme_override_font_sizes/font_size = 75
+offset_bottom = -161.0
+theme_override_constants/outline_size = 58
+theme_override_font_sizes/font_size = 92
 text = "Dumb ways to reprovar no detran"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="SairButton" type="Button" parent="." unique_id=250095784]
-offset_left = 851.0
-offset_top = -502.0
-offset_right = 925.0
-offset_bottom = -425.0
+offset_left = 845.0
+offset_top = -496.0
+offset_right = 919.0
+offset_bottom = -419.0
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
+
+[node name="NameInputLineEdit" type="LineEdit" parent="." unique_id=717002410]
+offset_left = -454.0
+offset_top = -3.0
+offset_right = 451.0
+offset_bottom = 118.0
+theme_override_font_sizes/font_size = 50
+placeholder_text = "Insira seu nome antes de jogar"
+alignment = 1
+max_length = 17
+metadata/_edit_use_anchors_ = true
+
+[node name="Warning" type="Label" parent="." unique_id=779593551]
+visible = false
+offset_left = -817.0
+offset_top = 355.0
+offset_right = 824.0
+offset_bottom = 535.0
+theme_override_colors/font_color = Color(0.81, 0.013499987, 0, 1)
+theme_override_constants/outline_size = 19
+theme_override_font_sizes/font_size = 50
+text = "Insira seu nome antes de jogar o desafio"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="ModoDesafioButton" to="." method="_on_modo_desafio_button_pressed"]
 [connection signal="pressed" from="LeaderboardButton" to="." method="_on_leaderboard_button_pressed"]

@@ -1,0 +1,211 @@
+[gd_scene format=3 uid="uid://db5pfsfy6w1ka"]
+
+[ext_resource type="Script" uid="uid://baa0ninsjgfue" path="res://challenges/prefabs/end_screen.gd" id="1_ao8md"]
+[ext_resource type="Texture2D" uid="uid://c0h6nyn8ii6wv" path="res://images/heart.png" id="2_ao8md"]
+
+[node name="EndScreen" type="ColorRect" unique_id=1781282191 node_paths=PackedStringArray("question", "label", "life_container", "num_points_label", "next_challenge_button", "count_points_button")]
+process_mode = 3
+offset_left = -968.0
+offset_top = -560.0
+offset_right = 991.0
+offset_bottom = 579.0
+color = Color(0.156863, 0.156863, 0.156863, 0.745098)
+script = ExtResource("1_ao8md")
+question = NodePath("Question")
+label = NodePath("LabelEnd")
+life_container = NodePath("HBoxContainer")
+num_points_label = NodePath("NumPointsLabel")
+next_challenge_button = NodePath("NextChallengeButton")
+count_points_button = NodePath("CountPointsButton")
+
+[node name="LabelEnd" type="Label" parent="." unique_id=1934216278]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 97.0
+offset_top = 96.0
+offset_right = -97.0
+offset_bottom = -829.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 70
+theme_override_font_sizes/font_size = 150
+text = "VENCEU"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ShowQuestionButton" type="Button" parent="." unique_id=141923839]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -626.5
+offset_top = -334.0
+offset_right = -16.0
+offset_bottom = -176.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/font_size = 61
+text = "Ver questão"
+
+[node name="NextChallengeButton" type="Button" parent="." unique_id=372335718]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 17.0
+offset_top = -334.0
+offset_right = 633.0
+offset_bottom = -176.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/font_size = 61
+text = "Proximo desafio"
+
+[node name="CountPointsButton" type="Button" parent="." unique_id=149806679]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 17.0
+offset_top = -334.0
+offset_right = 633.0
+offset_bottom = -176.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/font_size = 61
+text = "Finalizar desafio"
+
+[node name="LivesLabel" type="Label" parent="." unique_id=1209102560]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -551.5
+offset_top = -262.0
+offset_right = -72.5
+offset_bottom = -106.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 37
+theme_override_font_sizes/font_size = 39
+text = "VIDAS:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PointsLabel" type="Label" parent="." unique_id=2023843359]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -538.5
+offset_top = -54.0
+offset_right = -53.5
+offset_bottom = 102.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 37
+theme_override_font_sizes/font_size = 39
+text = "PONTOS:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1693262635]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -338.5
+offset_top = -199.5
+offset_right = 338.5
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=1640012540]
+layout_mode = 2
+texture = ExtResource("2_ao8md")
+expand_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer" unique_id=1764633953]
+layout_mode = 2
+texture = ExtResource("2_ao8md")
+expand_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="HBoxContainer" unique_id=2018985086]
+layout_mode = 2
+texture = ExtResource("2_ao8md")
+expand_mode = 2
+
+[node name="NumPointsLabel" type="Label" parent="." unique_id=1544025381]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -288.0
+offset_top = 65.5
+offset_right = 288.0
+offset_bottom = 206.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 46
+theme_override_font_sizes/font_size = 95
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Question" type="TextureRect" parent="." unique_id=717827489]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -574.0
+offset_top = -500.5
+offset_right = 574.0
+offset_bottom = 500.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CloseQuestionButton" type="Button" parent="Question" unique_id=406909441]
+layout_mode = 0
+offset_left = 1102.0
+offset_top = -46.0
+offset_right = 1190.0
+offset_bottom = 39.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 56
+text = "X"
+
+[connection signal="pressed" from="ShowQuestionButton" to="." method="_on_show_question_button_pressed"]
+[connection signal="pressed" from="NextChallengeButton" to="." method="_on_next_challenge_button_pressed"]
+[connection signal="pressed" from="CountPointsButton" to="." method="_on_count_points_button_pressed"]
+[connection signal="pressed" from="Question/CloseQuestionButton" to="." method="_on_close_question_button_pressed"]

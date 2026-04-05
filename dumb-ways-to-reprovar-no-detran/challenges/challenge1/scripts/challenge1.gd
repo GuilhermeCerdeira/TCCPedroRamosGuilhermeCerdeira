@@ -1,8 +1,5 @@
 extends Challenge
 
-@export var end_screen : ColorRect
-@export var end_screen_label : Label
-
 @export var pedal : Sprite2D
 @export var stick : Sprite2D
 
@@ -15,11 +12,11 @@ extends Challenge
 @export var rev_low_sound : AudioStreamPlayer2D
 @export var rev_high_sound : AudioStreamPlayer2D
 
-var pedal_tex_1 : Texture2D = load("res://images/clutch_1.png")
-var pedal_tex_2 : Texture2D = load("res://images/clutch_2.png")
+var pedal_tex_1 : Texture2D = load("res://challenges/challenge1/images/clutch_1.png")
+var pedal_tex_2 : Texture2D = load("res://challenges/challenge1/images/clutch_2.png")
 
-var stick_tex_1 : Texture2D = load("res://images/shift_1.png")
-var stick_tex_2 : Texture2D = load("res://images/shift_2.png")
+var stick_tex_1 : Texture2D = load("res://challenges/challenge1/images/shift_1.png")
+var stick_tex_2 : Texture2D = load("res://challenges/challenge1/images/shift_2.png")
 
 var clutch_in : bool = false
 
@@ -48,20 +45,12 @@ func _on_pointer_animation_player_animation_finished(anim_name):
 func _on_stick_button_button_down():
 	if clutch_in:
 		stick.frame = 1
-		end(true)
+		win.emit(self, (timer_instance.time_left/timer_instance.wait_time) * 100)
 	else:
 		stick_animation_player.play("wrong")
 
-func end(ganhou : bool):
-	end_screen.visible = true
-	if ganhou:
-		end_screen_label.text = "GANHOU"
-	else:
-		end_screen_label.text = "PERDEU"
-	get_tree().paused = true
-
-func _on_timer_timeout():
-	end(false)
+func _on_timeout():
+	lose.emit(self)
 
 func _on_down_finished():
 	rev_low_sound.play()

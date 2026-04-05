@@ -2,6 +2,8 @@ extends Node
 
 class_name Challenge
 
+@export var question : CompressedTexture2D
+
 var timer_scene : PackedScene = preload("res://challenges/prefabs/timer.tscn")
 var progress_bar_scene : PackedScene = preload("res://challenges/prefabs/progress_bar.tscn")
 
@@ -30,7 +32,6 @@ func _ready():
 	add_child(progress_bar_instance)
 	
 	timer_instance.start()
-	pass
 
 func _process(_delta):
 	pass

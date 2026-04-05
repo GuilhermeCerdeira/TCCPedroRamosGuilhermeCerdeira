@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://8etwwo4ou4b"]
 
 [ext_resource type="Script" uid="uid://3giq406fiby" path="res://challenges/challenge2/challenge2.gd" id="1_i82w0"]
+[ext_resource type="Texture2D" uid="uid://c2k5au3864lqp" path="res://challenges/challenge1/images/Screenshot_1.png" id="2_u5y63"]
 
 [node name="Challenge2" type="Node2D" unique_id=520292677 node_paths=PackedStringArray("label_teste")]
 script = ExtResource("1_i82w0")
 label_teste = NodePath("teste")
+question = ExtResource("2_u5y63")
 
 [node name="teste" type="Label" parent="." unique_id=583807376]
 offset_left = -295.0

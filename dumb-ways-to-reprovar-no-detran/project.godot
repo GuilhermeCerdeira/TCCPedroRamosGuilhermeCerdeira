@@ -21,7 +21,11 @@ config/icon="res://images/icon.svg"
 
 [autoload]
 
+<<<<<<< Updated upstream
 SimpleBoards="*uid://cbwgqa5bydk6f"
+=======
+AutoloadData="*uid://h1ylac38ncjr"
+>>>>>>> Stashed changes
 
 [editor_plugins]
 
