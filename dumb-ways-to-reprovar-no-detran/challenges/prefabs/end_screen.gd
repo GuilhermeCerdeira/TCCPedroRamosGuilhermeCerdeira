@@ -27,7 +27,7 @@ func show_screen(win : bool, _question : CompressedTexture2D, lives : int, point
 
 func show_top_label(win : bool, lives : int):
 	if win:
-		label.text = "FASE CONCLUIDA"
+		label.text = "DESAFIO CONCLUIDO"
 	elif lives > 0:
 		label.text = "PERDEU!"
 	else:

@@ -1,3 +1,75 @@
 [gd_scene format=3 uid="uid://b51e0eraak3lu"]
 
-[node name="Trainingmode" type="Node2D" unique_id=661765835]
+[ext_resource type="Script" uid="uid://b5pa1x46x1kk8" path="res://scripts/trainingmode.gd" id="1_mvqug"]
+
+[node name="Trainingmode" type="Node2D" unique_id=661765835 node_paths=PackedStringArray("container", "question_image")]
+script = ExtResource("1_mvqug")
+container = NodePath("ScrollContainer/VBoxContainer")
+question_image = NodePath("TextureRect")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1925524034]
+zoom = Vector2(0.595, 0.595)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=738009210]
+offset_left = -899.0
+offset_top = -169.0
+offset_right = -30.0
+offset_bottom = 317.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=312083502]
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="." unique_id=1595147609]
+offset_left = -774.0
+offset_top = 359.0
+offset_right = -157.0
+offset_bottom = 480.0
+theme_override_font_sizes/font_size = 50
+text = "Jogar desafio"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=983610193]
+offset_left = 130.0
+offset_top = -182.0
+offset_right = 817.0
+offset_bottom = 505.0
+
+[node name="ChallengesLabel" type="Label" parent="." unique_id=283247837]
+offset_left = -664.0
+offset_top = -275.0
+offset_right = -282.0
+offset_bottom = -185.0
+theme_override_font_sizes/font_size = 65
+text = "Desafios"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QuestionLabel" type="Label" parent="." unique_id=1082357596]
+offset_left = 272.0
+offset_top = -275.0
+offset_right = 654.0
+offset_bottom = -185.0
+theme_override_font_sizes/font_size = 65
+text = "Questão"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ReturnButton" type="Button" parent="." unique_id=1903461863]
+offset_left = -932.0
+offset_top = -515.0
+offset_right = -494.0
+offset_bottom = -394.0
+theme_override_font_sizes/font_size = 50
+text = "Voltar"
+
+[node name="TitleLabel" type="Label" parent="." unique_id=1773044082]
+offset_left = -372.0
+offset_top = -511.0
+offset_right = 379.0
+offset_bottom = -395.0
+theme_override_font_sizes/font_size = 85
+text = "Modo treino"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]

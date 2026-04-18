@@ -45,11 +45,14 @@ func _on_pointer_animation_player_animation_finished(anim_name):
 func _on_stick_button_button_down():
 	if clutch_in:
 		stick.frame = 1
-		win.emit(self, (timer_instance.time_left/timer_instance.wait_time) * 100)
+		particle_emit(true)
 	else:
 		stick_animation_player.play("wrong")
+		particle_emit(false)
 
 func _on_timeout():
+	check_win_condition()
+	# or
 	lose.emit(self)
 
 func _on_down_finished():
@@ -57,3 +60,10 @@ func _on_down_finished():
 
 func _on_up_finished():
 	rev_high_sound.play()
+
+func _on_particle_finished():
+	check_win_condition()
+	
+func check_win_condition():
+	if clutch_in and stick.frame == 1:
+		win.emit(self, win_points_default_value())

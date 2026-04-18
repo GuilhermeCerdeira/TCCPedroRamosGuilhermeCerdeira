@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://d4h3ombv22ppn"]
+
+[ext_resource type="Script" uid="uid://dfgijba7datbe" path="res://scripts/challenge_choice.gd" id="1_fa2un"]
+
+[node name="ChallengeChoice" type="Button" unique_id=1102035286]
+custom_minimum_size = Vector2(850, 130)
+offset_right = 850.0
+offset_bottom = 130.0
+theme_override_font_sizes/font_size = 50
+toggle_mode = true
+text = "Desafio 1"
+script = ExtResource("1_fa2un")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

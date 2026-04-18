@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://se6frauyxf78"]
+
+[ext_resource type="Script" uid="uid://k86gs2b33wby" path="res://challenges/prefabs/end_screen_train_mode.gd" id="1_c6m33"]
+
+[node name="EndScreenTrainMode" type="ColorRect" unique_id=1781282191 node_paths=PackedStringArray("question", "label")]
+process_mode = 3
+offset_left = -968.0
+offset_top = -560.0
+offset_right = 991.0
+offset_bottom = 579.0
+color = Color(0.22, 0.22, 0.22, 1)
+script = ExtResource("1_c6m33")
+question = NodePath("Question")
+label = NodePath("LabelEnd")
+
+[node name="LabelEnd" type="Label" parent="." unique_id=1934216278]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 97.0
+offset_top = 312.0
+offset_right = -97.0
+offset_bottom = -613.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 70
+theme_override_font_sizes/font_size = 150
+text = "VENCEU"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ShowQuestionButton" type="Button" parent="." unique_id=141923839]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -626.5
+offset_top = -486.0
+offset_right = -16.0
+offset_bottom = -328.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/font_size = 61
+text = "Ver questão"
+
+[node name="ReturnButton" type="Button" parent="." unique_id=372335718]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 17.0
+offset_top = -486.0
+offset_right = 633.0
+offset_bottom = -328.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/font_size = 61
+text = "Voltar"
+
+[node name="Question" type="TextureRect" parent="." unique_id=717827489]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -574.0
+offset_top = -500.5
+offset_right = 574.0
+offset_bottom = 500.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CloseQuestionButton" type="Button" parent="Question" unique_id=406909441]
+layout_mode = 0
+offset_left = 1102.0
+offset_top = -46.0
+offset_right = 1190.0
+offset_bottom = 39.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 56
+text = "X"
+
+[connection signal="pressed" from="ShowQuestionButton" to="." method="_on_show_question_button_pressed"]
+[connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]
+[connection signal="pressed" from="Question/CloseQuestionButton" to="." method="_on_close_question_button_pressed"]

@@ -186,10 +186,13 @@ rev_high_sound = NodePath("rev-high")
 question = ExtResource("2_1ou80")
 
 [node name="bg" type="Sprite2D" parent="." unique_id=653213139]
-position = Vector2(-1, 0)
+position = Vector2(-1.7293701, -96.5)
+scale = Vector2(1.2246239, 1.2246239)
 texture = ExtResource("2_y51wv")
 
 [node name="pedal" type="Sprite2D" parent="." unique_id=836801896]
+position = Vector2(-2.5263672, -96.99988)
+scale = Vector2(1.225, 1.225)
 texture = ExtResource("3_avxgo")
 
 [node name="Button" type="Button" parent="pedal" unique_id=636251691]
@@ -200,23 +203,26 @@ offset_bottom = 352.0
 focus_mode = 0
 toggle_mode = true
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=87925300]
 zoom = Vector2(0.595, 0.595)
 
 [node name="limiter" type="Sprite2D" parent="." unique_id=697939210]
-position = Vector2(-119, -79)
+position = Vector2(-143, -191)
 rotation = 3.49066
+scale = Vector2(1.225, 1.225)
 texture = ExtResource("4_j7pff")
 offset = Vector2(119.835, 78.6)
 
 [node name="warning" type="Sprite2D" parent="." unique_id=1116292285]
-position = Vector2(-14, -7)
-scale = Vector2(0.91, 0.902256)
+position = Vector2(-11.5, -100.42407)
+scale = Vector2(1.171875, 1.200045)
 texture = ExtResource("5_107nt")
 
 [node name="stick" type="Sprite2D" parent="." unique_id=270703093]
-position = Vector2(400, 400)
+position = Vector2(484, 386)
+scale = Vector2(1.225, 1.225)
 texture = ExtResource("6_ectwq")
 hframes = 2
 
@@ -227,6 +233,7 @@ offset_right = 102.0
 offset_bottom = 119.0
 focus_mode = 0
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="PointerAnimationPlayer" type="AnimationPlayer" parent="." unique_id=47684799]
 root_node = NodePath("../limiter")
@@ -241,17 +248,21 @@ autoplay = &"warning"
 libraries/ = SubResource("AnimationLibrary_dpd7b")
 
 [node name="rev-low" type="AudioStreamPlayer2D" parent="." unique_id=1504614104]
+position = Vector2(8, 0)
 stream = ExtResource("10_vyf5k")
 
 [node name="up" type="AudioStreamPlayer2D" parent="." unique_id=578019345]
+position = Vector2(8, 0)
 stream = ExtResource("11_d0v2k")
 
 [node name="rev-high" type="AudioStreamPlayer2D" parent="." unique_id=160807073]
+position = Vector2(8, 0)
 stream = ExtResource("12_jrgwv")
 volume_db = -10.346
 autoplay = true
 
 [node name="down" type="AudioStreamPlayer2D" parent="." unique_id=1276402412]
+position = Vector2(8, 0)
 stream = ExtResource("13_yk8nb")
 volume_db = -10.346
 

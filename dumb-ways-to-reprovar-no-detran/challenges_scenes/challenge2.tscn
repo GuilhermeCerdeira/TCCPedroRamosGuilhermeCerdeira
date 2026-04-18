@@ -1,11 +1,8 @@
 [gd_scene format=3 uid="uid://8etwwo4ou4b"]
 
-[ext_resource type="Script" uid="uid://3giq406fiby" path="res://challenges/challenge2/challenge2.gd" id="1_i82w0"]
-[ext_resource type="PackedScene" uid="uid://tqxnehokun25" path="res://challenges/prefabs/particle.tscn" id="2_3kn81"]
+[ext_resource type="Script" uid="uid://3giq406fiby" path="res://challenges/challenge2/scripts/challenge2.gd" id="1_i82w0"]
 [ext_resource type="Texture2D" uid="uid://couga60g37vwc" path="res://challenges/challenge2/images/questao-2.png" id="2_k361y"]
-[ext_resource type="Texture2D" uid="uid://bl0hxcqkqf2vi" path="res://challenges/challenge2/images/check.png" id="2_vc83w"]
 [ext_resource type="Texture2D" uid="uid://bga1s6fjihxrq" path="res://challenges/challenge2/images/prf.png" id="2_vr6lj"]
-[ext_resource type="Texture2D" uid="uid://brtw65c0qf2v" path="res://challenges/challenge2/images/xis.png" id="3_3kn81"]
 [ext_resource type="Texture2D" uid="uid://cvsbj2xewx66s" path="res://challenges/challenge2/images/intersection.png" id="3_k361y"]
 [ext_resource type="Texture2D" uid="uid://brkahr78b5j2c" path="res://challenges/challenge2/images/carro1.png" id="4_wd2oo"]
 [ext_resource type="Texture2D" uid="uid://qhr1a8tf5os6" path="res://challenges/challenge2/images/carro2.png" id="5_wt1bt"]
@@ -75,13 +72,11 @@ _data = {
 
 [node name="Challenge2" type="Node2D" unique_id=520292677 node_paths=PackedStringArray("prf_animation")]
 script = ExtResource("1_i82w0")
-particle = ExtResource("2_3kn81")
 prf_animation = NodePath("AnimationPlayer")
-right_texture = ExtResource("2_vc83w")
-wrong_texture = ExtResource("3_3kn81")
 question = ExtResource("2_k361y")
 
 [node name="road" type="Sprite2D" parent="." unique_id=1181291318]
+position = Vector2(2, 0)
 scale = Vector2(0.44871795, 0.448718)
 texture = ExtResource("3_k361y")
 

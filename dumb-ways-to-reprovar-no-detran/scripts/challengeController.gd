@@ -1,6 +1,7 @@
-extends Node2D
+extends BaseWindow
 
-@export var challenges : Array[PackedScene]
+class_name ChallengeModeController
+
 @onready var end_screen : PackedScene = load("res://challenges/prefabs/end_screen.tscn")
 
 var lives : int = 3
@@ -19,7 +20,7 @@ func next_challenge():
 	add_child(challenge)
 
 func get_random_challenge() -> Challenge:
-	var scene : PackedScene = challenges.pick_random()
+	var scene : PackedScene = AutoloadData.challenges.pick_random()
 	return scene.instantiate()
 
 func _on_win(challenge : Challenge, _points : int):
@@ -67,4 +68,4 @@ func compare_scores() -> bool:
 func save_points_in_leaderboard():
 	if await compare_scores():
 		await SimpleBoards.send_score_with_id('b06851a0-d63d-48f0-5a2b-08de8c0e271a', AutoloadData.player_name, points, null, create_player_id())
-	get_tree().change_scene_to_file("res://scenes/mainmenu.tscn")
+	return_to_menu()
