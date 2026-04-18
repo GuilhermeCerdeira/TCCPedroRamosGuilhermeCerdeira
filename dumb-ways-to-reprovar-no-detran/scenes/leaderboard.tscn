@@ -6,10 +6,10 @@
 [node name="Leaderboard" type="Node2D" unique_id=1148129305]
 
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1773973440]
-offset_left = -742.0
-offset_top = -227.0
-offset_right = 364.0
-offset_bottom = 254.0
+offset_left = -442.0
+offset_top = -258.0
+offset_right = 646.0
+offset_bottom = 354.0
 
 [node name="LeaderboardList" type="VBoxContainer" parent="ScrollContainer" unique_id=1461985699]
 layout_mode = 2

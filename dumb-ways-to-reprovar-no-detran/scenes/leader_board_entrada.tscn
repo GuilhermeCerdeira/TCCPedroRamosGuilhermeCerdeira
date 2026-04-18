@@ -4,30 +4,33 @@
 
 [node name="LeaderboardEntrada" type="HBoxContainer" unique_id=160507385]
 anchors_preset = -1
-anchor_left = -1.2040001
-anchor_top = -1.1910001
-anchor_right = -1.2040001
-anchor_bottom = -1.1910001
-offset_left = 418.00818
-offset_top = 225.76807
-offset_right = 1019.0082
-offset_bottom = 639.76807
+anchor_left = -1.1
+anchor_top = -1.1350001
+anchor_right = -0.841
+anchor_bottom = -0.95500004
+offset_left = -196.79993
+offset_top = -203.51996
+offset_right = 214.83203
+offset_bottom = 178.84003
 script = ExtResource("1_ywk2c")
 
 [node name="Rank" type="Label" parent="." unique_id=331320432]
 layout_mode = 2
+text = "RANK"
 horizontal_alignment = 1
 
 [node name="Name" type="Label" parent="." unique_id=1788751246]
 layout_mode = 2
+text = "NAME"
 horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="Score" type="Label" parent="." unique_id=615207404]
 layout_mode = 2
-text = "HGAHAHAHAHAHAHA"
+text = "SCORE"
 horizontal_alignment = 2
 vertical_alignment = 2
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1514028699]
+position = Vector2(133, 248)
 zoom = Vector2(0.595, 0.595)

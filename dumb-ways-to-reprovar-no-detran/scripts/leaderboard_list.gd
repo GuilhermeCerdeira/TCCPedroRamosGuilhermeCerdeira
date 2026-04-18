@@ -1,13 +1,9 @@
 extends VBoxContainer
-
 @export var entry_scene: PackedScene 
 
-
 func _ready():
-	print("aaaaaaaaaaaaaaaaaaa")
 	if SimpleBoards: 
 		SimpleBoards.entries_got.connect(_on_leaderboard_received)
-		
 		atualizar_ranking()
 
 func atualizar_ranking():

@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://vrgernfbg2de"]
 
 [ext_resource type="Script" uid="uid://p6d5vmrextf" path="res://scripts/challengeController.gd" id="1_i57f2"]
+[ext_resource type="PackedScene" uid="uid://bqnc7ubwej5vr" path="res://challenges/challenge3/scripts/challenge3.tscn" id="2_xssfp"]
 
 [node name="Challengemode" type="Node2D" unique_id=268469908]
 script = ExtResource("1_i57f2")
+challenges = Array[PackedScene]([ExtResource("2_xssfp")])
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=799671571]
 zoom = Vector2(0.595, 0.595)

@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://bqnc7ubwej5vr"]
+
+[ext_resource type="Script" uid="uid://desyas8f6kojn" path="res://challenges/challenge3/scripts/challenge3.gd" id="1_jptyp"]
+[ext_resource type="Texture2D" uid="uid://c2k5au3864lqp" path="res://challenges/challenge1/images/Screenshot_1.png" id="2_mqaac"]
+[ext_resource type="Texture2D" uid="uid://0quunw73e7i6" path="res://challenges/challenge3/images/bg3.jpg" id="3_54h0d"]
+[ext_resource type="Texture2D" uid="uid://qiym0cxd0ls4" path="res://challenges/challenge1/images/clutch_1.png" id="4_432u3"]
+
+[node name="Challenge2" type="Node2D" unique_id=520292677]
+script = ExtResource("1_jptyp")
+question = ExtResource("2_mqaac")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=129249615]
+zoom = Vector2(0.595, 0.595)
+
+[node name="bg" type="Sprite2D" parent="." unique_id=1113414085]
+position = Vector2(-6.0000005, 0)
+scale = Vector2(3.1166573, 2.74)
+texture = ExtResource("3_54h0d")
+
+[node name="breaks" type="Sprite2D" parent="." unique_id=1624872027]
+position = Vector2(-65, 119.999985)
+scale = Vector2(1.5381248, 0.680921)
+texture = ExtResource("4_432u3")
+
+[node name="breakbutton" type="Button" parent="breaks" unique_id=849394095]
+offset_left = -106.62341
+offset_top = 257.00488
+offset_right = -17.623413
+offset_bottom = 344.00488
+focus_mode = 0
+toggle_mode = true
+flat = true
+
+[node name="lights" type="Sprite2D" parent="." unique_id=922259800]
+position = Vector2(-65, 119.999985)
+scale = Vector2(1.5381248, 0.680921)
+texture = ExtResource("4_432u3")
+
+[node name="lightbutton" type="Button" parent="lights" unique_id=1071729965]
+offset_left = -128.72818
+offset_top = -51.40094
+offset_right = -39.72818
+offset_bottom = 35.59906
+focus_mode = 0
+toggle_mode = true
+flat = true
+
+[connection signal="pressed" from="breaks/breakbutton" to="." method="_on_breakbutton_pressed"]
+[connection signal="pressed" from="lights/lightbutton" to="." method="_on_lightbutton_pressed"]
