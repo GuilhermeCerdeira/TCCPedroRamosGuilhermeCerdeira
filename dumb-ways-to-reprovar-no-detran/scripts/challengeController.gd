@@ -13,15 +13,11 @@ func _ready():
 
 func next_challenge():
 	dificulty += 1
-	var challenge : Challenge =  get_random_challenge()
+	var challenge : Challenge =  AutoloadData.get_random_challenge()
 	challenge.setup(dificulty, get_time(dificulty))
 	challenge.win.connect(_on_win)
 	challenge.lose.connect(_on_lose)
 	add_child(challenge)
-
-func get_random_challenge() -> Challenge:
-	var scene : PackedScene = AutoloadData.challenges.pick_random()
-	return scene.instantiate()
 
 func _on_win(challenge : Challenge, _points : int):
 	points += _points

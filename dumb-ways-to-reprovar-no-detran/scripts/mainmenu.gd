@@ -1,5 +1,7 @@
 extends Node2D
 
+class_name MainMenuController
+
 @export var name_input : LineEdit
 @export var warning_name : Label
 

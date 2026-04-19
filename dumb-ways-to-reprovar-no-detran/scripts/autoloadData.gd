@@ -22,3 +22,7 @@ func load_challenges():
 			file_name = dir.get_next()
 		
 		dir.list_dir_end()
+
+func get_random_challenge() -> Challenge:
+	var scene : PackedScene = AutoloadData.challenges.pick_random()
+	return scene.instantiate()

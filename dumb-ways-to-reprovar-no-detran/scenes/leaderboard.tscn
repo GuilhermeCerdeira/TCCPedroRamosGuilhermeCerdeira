@@ -1,24 +1,74 @@
 [gd_scene format=3 uid="uid://dw3kkaelrm3le"]
 
+[ext_resource type="Script" uid="uid://cdc5nojqisee7" path="res://scripts/LeaderboardController.gd" id="1_wgq7h"]
 [ext_resource type="PackedScene" uid="uid://fd1laj5co37a" path="res://scenes/leader_board_entrada.tscn" id="2_8lgqg"]
-[ext_resource type="Script" uid="uid://7a3unwvldyne" path="res://scripts/leaderboard_list.gd" id="2_wgq7h"]
+
+[sub_resource type="Gradient" id="Gradient_mvqug"]
+offsets = PackedFloat32Array(0.07973422, 0.70431894, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.23757991, 0.7899285, 0.55448604, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wgq7h"]
+gradient = SubResource("Gradient_mvqug")
 
 [sub_resource type="Theme" id="Theme_wgq7h"]
 
-[node name="Leaderboard" type="Node2D" unique_id=1148129305]
+[node name="Leaderboard" type="Node2D" unique_id=1148129305 node_paths=PackedStringArray("container")]
+script = ExtResource("1_wgq7h")
+entry_scene = ExtResource("2_8lgqg")
+container = NodePath("ScrollContainer/LeaderboardList")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1697021673]
+offset_left = -1287.0
+offset_top = -775.0
+offset_right = 1310.0
+offset_bottom = 799.0
+texture = SubResource("GradientTexture2D_wgq7h")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1773973440]
 custom_minimum_size = Vector2(400, 600)
-offset_left = -442.0
-offset_top = -258.0
-offset_right = 646.0
-offset_bottom = 354.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -501.0
+offset_top = -313.0
+offset_right = 499.0
+offset_bottom = 336.0
+grow_horizontal = 2
 
 [node name="LeaderboardList" type="VBoxContainer" parent="ScrollContainer" unique_id=1461985699]
 layout_mode = 2
 theme = SubResource("Theme_wgq7h")
-script = ExtResource("2_wgq7h")
-entry_scene = ExtResource("2_8lgqg")
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="ReturnButton" type="Button" parent="." unique_id=1603264236]
+offset_left = -932.0
+offset_top = -515.0
+offset_right = -494.0
+offset_bottom = -394.0
+theme_override_font_sizes/font_size = 50
+text = "Voltar"
+
+[node name="TitleLabel" type="Label" parent="." unique_id=1939301766]
+offset_left = -372.0
+offset_top = -511.0
+offset_right = 379.0
+offset_bottom = -395.0
+theme_override_font_sizes/font_size = 85
+text = "Placar de líderes"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=997428235]
 zoom = Vector2(0.595, 0.595)
+
+[node name="RefreshButton" type="Button" parent="." unique_id=1863514152]
+offset_left = -218.0
+offset_top = 379.0
+offset_right = 220.0
+offset_bottom = 500.0
+theme_override_font_sizes/font_size = 50
+text = "Atualizar"
+
+[connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]
+[connection signal="pressed" from="RefreshButton" to="." method="_on_refresh_button_pressed"]

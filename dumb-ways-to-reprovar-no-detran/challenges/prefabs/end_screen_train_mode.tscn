@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://se6frauyxf78"]
 
 [ext_resource type="Script" uid="uid://k86gs2b33wby" path="res://challenges/prefabs/end_screen_train_mode.gd" id="1_c6m33"]
+[ext_resource type="Texture2D" uid="uid://cvy86tk5pmuhd" path="res://challenges/prefabs/win_gradient.tres" id="2_c6m33"]
 
-[node name="EndScreenTrainMode" type="ColorRect" unique_id=1781282191 node_paths=PackedStringArray("question", "label")]
+[node name="EndScreenTrainMode" type="ColorRect" unique_id=1781282191 node_paths=PackedStringArray("question", "label", "gradient_bg")]
 process_mode = 3
 offset_left = -968.0
 offset_top = -560.0
@@ -12,6 +13,15 @@ color = Color(0.22, 0.22, 0.22, 1)
 script = ExtResource("1_c6m33")
 question = NodePath("Question")
 label = NodePath("LabelEnd")
+gradient_bg = NodePath("GradientBG")
+
+[node name="GradientBG" type="TextureRect" parent="." unique_id=1444119975]
+layout_mode = 0
+offset_left = -331.0
+offset_top = -258.0
+offset_right = 2266.0
+offset_bottom = 1316.0
+texture = ExtResource("2_c6m33")
 
 [node name="LabelEnd" type="Label" parent="." unique_id=1934216278]
 layout_mode = 1

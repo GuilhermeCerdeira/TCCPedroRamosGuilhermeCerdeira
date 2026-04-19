@@ -11,6 +11,10 @@ class_name EndScreen
 @export var next_challenge_button : Button
 @export var count_points_button : Button
 
+@export var gradient_bg : TextureRect
+
+var lose_gradient : Resource = preload("res://challenges/prefabs/lose_gradient.tres")
+
 signal count_points
 signal next_challenge
 
@@ -24,6 +28,9 @@ func show_screen(win : bool, _question : CompressedTexture2D, lives : int, point
 	show_lives(lives)
 	
 	num_points_label.text = str(points)
+	
+	if not win:
+		gradient_bg.texture = lose_gradient
 
 func show_top_label(win : bool, lives : int):
 	if win:

@@ -1,72 +1,88 @@
 [gd_scene format=3 uid="uid://def1o8r03djfm"]
 
 [ext_resource type="Script" uid="uid://dqcyc24krc61a" path="res://scripts/mainmenu.gd" id="1_5mbse"]
+[ext_resource type="Texture2D" uid="uid://ckop47jhwobxg" path="res://images/jered.png" id="2_natt5"]
+
+[sub_resource type="Gradient" id="Gradient_natt5"]
+offsets = PackedFloat32Array(0.09966777, 0.6777409, 0.9335548)
+colors = PackedColorArray(0, 0, 0, 1, 1, 0.78039217, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_r3g3c"]
+gradient = SubResource("Gradient_natt5")
 
 [node name="Mainmenu" type="Node2D" unique_id=309831311 node_paths=PackedStringArray("name_input", "warning_name")]
 script = ExtResource("1_5mbse")
 name_input = NodePath("NameInputLineEdit")
 warning_name = NodePath("Warning")
 
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1820630398]
+offset_left = -1168.2046
+offset_top = -703.0
+offset_right = 1191.2046
+offset_bottom = 727.0
+texture = SubResource("GradientTexture2D_r3g3c")
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=21001234]
 zoom = Vector2(0.595, 0.595)
 
 [node name="ModoDesafioButton" type="Button" parent="." unique_id=1288187031]
 offset_left = -455.0
-offset_top = 128.0
+offset_top = 144.0
 offset_right = -13.0
-offset_bottom = 280.0
+offset_bottom = 296.0
 theme_override_font_sizes/font_size = 50
 text = "Modo desafio"
-metadata/_edit_use_anchors_ = true
 
 [node name="LeaderboardButton" type="Button" parent="." unique_id=1218456848]
 offset_left = -455.0
-offset_top = 288.0
+offset_top = 304.0
 offset_right = -13.0
-offset_bottom = 368.0
+offset_bottom = 384.0
 theme_override_font_sizes/font_size = 50
-text = "Placar"
-metadata/_edit_use_anchors_ = true
+text = "Placar de líderes"
 
 [node name="ModoTreinoButton" type="Button" parent="." unique_id=1956415955]
 offset_left = 10.0
-offset_top = 127.0
+offset_top = 143.0
 offset_right = 452.0
-offset_bottom = 368.0
+offset_bottom = 384.0
 theme_override_font_sizes/font_size = 50
 text = "Modo treino"
-metadata/_edit_use_anchors_ = true
+
+[node name="Jered" type="Sprite2D" parent="." unique_id=492341978]
+position = Vector2(-640.00006, -237.00015)
+scale = Vector2(0.5131302, 0.5131302)
+texture = ExtResource("2_natt5")
 
 [node name="TituloLabel" type="Label" parent="." unique_id=884068161]
-offset_left = -817.0
-offset_top = -341.0
-offset_right = 824.0
-offset_bottom = -161.0
+offset_left = -456.0
+offset_top = -403.0
+offset_right = 877.0
+offset_bottom = -61.0
 theme_override_constants/outline_size = 58
 theme_override_font_sizes/font_size = 92
-text = "Dumb ways to reprovar no detran"
-horizontal_alignment = 1
+text = "Jeitos Engraçados de Reprovar no Exame do Detran"
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="SairButton" type="Button" parent="." unique_id=250095784]
-offset_left = 845.0
-offset_top = -496.0
-offset_right = 919.0
-offset_bottom = -419.0
+offset_left = 842.0
+offset_top = -492.0
+offset_right = 920.0
+offset_bottom = -415.0
 theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
 
 [node name="NameInputLineEdit" type="LineEdit" parent="." unique_id=717002410]
 offset_left = -454.0
-offset_top = -3.0
+offset_top = 13.0
 offset_right = 451.0
-offset_bottom = 118.0
+offset_bottom = 134.0
 theme_override_font_sizes/font_size = 50
 placeholder_text = "Insira seu nome antes de jogar"
 alignment = 1
 max_length = 17
-metadata/_edit_use_anchors_ = true
 
 [node name="Warning" type="Label" parent="." unique_id=779593551]
 visible = false
