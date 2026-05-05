@@ -8,6 +8,7 @@ class_name EndScreen
 @export var life_container : HBoxContainer
 @export var num_points_label : Label
 
+@export var show_question_button : Button
 @export var next_challenge_button : Button
 @export var count_points_button : Button
 
@@ -17,6 +18,12 @@ var lose_gradient : Resource = preload("res://challenges/prefabs/lose_gradient.t
 
 signal count_points
 signal next_challenge
+
+func _enter_tree():
+	await get_tree().create_timer(1).timeout
+	show_question_button.disabled = false
+	next_challenge_button.disabled = false
+	count_points_button.disabled = false
 
 func show_screen(win : bool, _question : CompressedTexture2D, lives : int, points: int):
 	get_tree().paused = true
@@ -34,7 +41,7 @@ func show_screen(win : bool, _question : CompressedTexture2D, lives : int, point
 
 func show_top_label(win : bool, lives : int):
 	if win:
-		label.text = "DESAFIO CONCLUIDO"
+		label.text = "DESAFIO CONCLUÍDO"
 	elif lives > 0:
 		label.text = "PERDEU!"
 	else:

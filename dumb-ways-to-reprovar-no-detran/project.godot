@@ -18,11 +18,16 @@ config/name="dumb-ways-to-reprovar-no-detran"
 run/main_scene="uid://def1o8r03djfm"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://images/icon.svg"
+config/windows_native_icon="res://images/icons/icon.ico"
 
 [autoload]
 
 SimpleBoards="*uid://cbwgqa5bydk6f"
 AutoloadData="*uid://h1ylac38ncjr"
+
+[display]
+
+window/size/resizable=false
 
 [editor_plugins]
 

@@ -21,7 +21,7 @@ func show_screen(win : bool, _question : CompressedTexture2D):
 
 func show_top_label(win : bool):
 	if win:
-		label.text = "DESAFIO CONCLUIDO"
+		label.text = "DESAFIO CONCLUÍDO"
 	else:
 		label.text = "PERDEU!"
 

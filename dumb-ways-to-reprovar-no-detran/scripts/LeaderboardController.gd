@@ -5,19 +5,23 @@ class_name LeaderboardController
 @export var entry_scene: PackedScene 
 @export var container: VBoxContainer
 
+@export var loading_label : Label
+
 func _ready():
 	if SimpleBoards: 
 		SimpleBoards.entries_got.connect(_on_leaderboard_received)
 		atualizar_ranking()
 
 func atualizar_ranking():
-	print(">>> Solicitando dados da API...")
+	loading_label.text = "Carregando..."
 	for child in container.get_children():
 		child.queue_free()
 		
 	SimpleBoards.get_entries("b06851a0-d63d-48f0-5a2b-08de8c0e271a")
 
 func _on_leaderboard_received(entries):
+	loading_label.text = ""
+	
 	if entries.size() == 0:
 		return
 
